@@ -1,10 +1,12 @@
 // app/index.tsx
 import React, { useState, useEffect } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Button } from 'react-native';
 import { getApps } from 'firebase/app'; // Import getApps to check initialization
 import '../firebaseConfig'; // Ensure this import is correct to initialize Firebase
+import { useNavigation } from '@react-navigation/native';
 
 export default function Index() {
+  const navigation = useNavigation();
   const [initMessage, setInitMessage] = useState('Initializing Firebase...');
 
   useEffect(() => {
@@ -34,10 +36,15 @@ export default function Index() {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        padding: 16,
       }}
     >
       <Text>Welcome to this project</Text>
       <Text>{initMessage}</Text>
+      <Button
+        title="Go to Join Facebook"
+        onPress={() => navigation.navigate('JoinFacebook')}
+      />
     </View>
   );
 }
