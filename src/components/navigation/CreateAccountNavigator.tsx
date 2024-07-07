@@ -1,13 +1,13 @@
 // src/navigation/CreateAccountNavigator.tsx
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import JoinFacebookScreen from '../screens/CreateAccount/JoinFacebookScreen';
-import NameScreen from '../screens/CreateAccount/NameScreen';
-import BirthdayScreen from '../screens/CreateAccount/BirthdayScreen';
-import GenderScreen from '../screens/CreateAccount/GenderScreen';
-import MobileNumberScreen from '../screens/CreateAccount/MobileNumberScreen';
-import PasswordScreen from '../screens/CreateAccount/PasswordScreen';
-import TermsPrivacyScreen from '../screens/CreateAccount/TermsPrivacyScreen';
+import JoinFacebookScreen from '../../../app/screens/CreateAccount/JoinFacebookScreen';
+import NameScreen from '../../../app/screens/CreateAccount/NameScreen';
+import BirthdayScreen from '../../../app/screens/CreateAccount/BirthdayScreen';
+import GenderScreen from '../../../app/screens/CreateAccount/GenderScreen';
+import MobileNumberScreen from '../../../app/screens/CreateAccount/MobileNumberScreen';
+import PasswordScreen from '../../../app/screens/CreateAccount/PasswordScreen';
+import TermsPrivacyScreen from '../../../app/screens/CreateAccount/TermsPrivacyScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import Index from '../../../app/index';
 

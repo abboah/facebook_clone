@@ -4,6 +4,7 @@ import { Text, View, Button } from 'react-native';
 import { getApps } from 'firebase/app'; // Import getApps to check initialization
 import '../firebaseConfig'; // Ensure this import is correct to initialize Firebase
 import { useNavigation } from '@react-navigation/native';
+import { Link } from "expo-router";
 
 export default function Index() {
   const navigation = useNavigation();
@@ -41,10 +42,7 @@ export default function Index() {
     >
       <Text>Welcome to this project</Text>
       <Text>{initMessage}</Text>
-      <Button
-        title="Go to Join Facebook"
-        onPress={() => navigation.navigate('JoinFacebook')}
-      />
+      <Link href="/screens/CreateAccount/JoinFacebookScreen">JoinFacebook</Link>
     </View>
   );
 }
