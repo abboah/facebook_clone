@@ -14,9 +14,10 @@ const TermsPrivacyScreen = ({  }) => {
         <Text style={styles.link}> Cookies Policy</Text>.
         </Text>
       <TouchableOpacity style={styles.button} onPress={() => router.push("/screens/CreateAccount/TermsPrivacyScreen")}>
-        <Text style={styles.buttonText}>Next</Text>
+        <Text style={styles.buttonText}>Sign Up</Text>
       </TouchableOpacity>
       <Text style={styles.link} onPress={() => { /* Skip linking contacts */ }}>Sign up without updating my contact</Text>
+      <Text style={styles.subtitle}> Our Data Policy and Terms of Service remain in effect, and this name change does not affect how we use or share data. Learn more about Flink and our vision for the world.</Text>
     </View>
   );
 };
@@ -36,10 +37,11 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 16, 
-    marginHorizontal: 10,
+    marginHorizontal: 20,
     textAlign: 'center',
   },
   link: {
+    marginBottom: 200,
     color: 'blue',
     textDecorationLine: 'underline',
   },
@@ -54,7 +56,7 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 50,
-    marginBottom: 30,
+    marginBottom: 20,
     backgroundColor: '#FE6B35',
     paddingVertical: 12,
     paddingHorizontal: 125,
