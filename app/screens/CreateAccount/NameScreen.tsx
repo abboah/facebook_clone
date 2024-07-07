@@ -3,7 +3,7 @@ import { router } from 'expo-router';
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from 'react-native';
 
-const NameScreen = ({ navigation }) => {
+const NameScreen = ({  }) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
 

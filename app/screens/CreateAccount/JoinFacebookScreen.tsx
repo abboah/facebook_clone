@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { NavigationProp, ParamListBase } from '@react-navigation/native';
 import { router } from 'expo-router';
+const image = require("../../../assets/images/Illustrationcreate.png")
 
 type Props = {
   navigation: NavigationProp<ParamListBase>;
@@ -11,6 +12,7 @@ const JoinFacebookScreen: React.FC<Props> = ({ navigation }) => {
   
   return (
     <View style={styles.container}>
+      <Image source={image}/>
       <Text style={styles.title}>Join Flink</Text>
       <Text style={styles.subtitle1}>We'll help you</Text>
       <Text style={styles.subtitle2}>create a new account in a few easy steps.</Text>
@@ -26,14 +28,16 @@ const JoinFacebookScreen: React.FC<Props> = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     padding: 16,
+    
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 50,
+    marginBottom: 20,
+    marginTop: 60
   },
   subtitle1: {
     fontSize: 16, 
