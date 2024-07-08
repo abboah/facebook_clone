@@ -3,54 +3,48 @@ import {
   StyleSheet,
   Text,
   SafeAreaView,
-  Image,
   TextInput,
   TouchableOpacity,
   View,
   Keyboard,
   KeyboardAvoidingView,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
 } from "react-native";
 
-
-
-const ForgotPasswordScreen = ({ navigation }) => {
-    const [isFocused, setIsFocused] = useState(false);
-
+const SearchByEmailScreen = ({ navigation }) => {
+  const [isFocused, setIsFocused] = useState(false);
+  
   const handleFindAccount = () => {
-    navigation.navigate("OTPVerification");
-  };
-  const handleSearchByEmail = () => {
-    navigation.navigate("SearchByEmail"); // Navigate to SearchByEmailScreen
+    navigation.navigate("OTPVerification");  };
+
+  const handleSearchByNumber = () => {
+    navigation.navigate("ForgotPassword"); // Navigate back to ForgotPasswordScreen
   };
 
   return (
-    <SafeAreaView style={styles.container}>
     <KeyboardAvoidingView style={styles.container} behavior="padding">
       <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
         <View style={styles.inner}>
-          
-          <Text style={styles.title}>Enter your phone number</Text>
+         
+          <Text style={styles.title}>Enter your email address</Text>
           <TextInput
-            placeholder="Phone Number"
+            placeholder="Email"
             style={[styles.textInput, isFocused && styles.textInputFocused]}
-            keyboardType="phone-pad"
+            keyboardType="email-address"
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
           />
           <TouchableOpacity style={styles.button} onPress={handleFindAccount}>
             <Text style={styles.buttonText}>Find Your Account</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={handleSearchByEmail} style={styles.searchByEmailButton}>
-            <Text style={styles.searchByEmailText}>Search by Email Instead</Text>
+          <TouchableOpacity onPress={handleSearchByNumber} style={styles.searchByNumberButton}>
+            <Text style={styles.searchByNumberText}>Search by Number Instead</Text>
           </TouchableOpacity>
         </View>
       </TouchableWithoutFeedback>
     </KeyboardAvoidingView>
-    </SafeAreaView>
   );
-}
-;
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -66,7 +60,15 @@ const styles = StyleSheet.create({
     right: 50,
     left: 50,
   },
-  
+  backButton: {
+    position: "absolute",
+    top: 50,
+    left: 20,
+  },
+  backButtonText: {
+    fontSize: 18,
+    color: "#384CFF",
+  },
   title: {
     fontSize: 18,
     fontWeight: "bold",
@@ -76,8 +78,8 @@ const styles = StyleSheet.create({
   textInput: {
     width: "100%",
     height: 40,
-    borderBottomWidth: 1,
-    borderBottomColor: "grey",
+    borderBottomWidth: 2,
+    borderBottomColor: "#ddd",
     fontSize: 16,
     marginTop: 20,
     textAlign: "center",
@@ -86,7 +88,6 @@ const styles = StyleSheet.create({
     borderBottomColor: "#384CFF",  // Change border color when focused
     borderBottomWidth: 1,
   },
-
   button: {
     backgroundColor: "#FE6B35",
     paddingVertical: 10,
@@ -94,7 +95,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "100%",
     marginTop: 55,
-    shadowColor: "#384CFF",
     shadowColor: "#0e23e1",
     shadowOffset: {
     width: 0,
@@ -109,15 +109,15 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "bold",
   },
-  searchByEmailButton: {
+  searchByNumberButton: {
     position: 'absolute',
     top: 400,
   },
-  searchByEmailText: {
+  searchByNumberText: {
     color: "#384CFF",
     fontSize: 16,
     fontWeight: "bold",
   },
 });
 
-export default ForgotPasswordScreen;
+export default SearchByEmailScreen;

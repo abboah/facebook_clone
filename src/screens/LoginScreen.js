@@ -1,6 +1,17 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, SafeAreaView, Image, TextInput, TouchableOpacity, View, Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback } from "react-native";
-import { useNavigation } from '@react-navigation/native';
+import {
+  StyleSheet,
+  Text,
+  SafeAreaView,
+  Image,
+  TextInput,
+  TouchableOpacity,
+  View,
+  Keyboard,
+  KeyboardAvoidingView,
+  TouchableWithoutFeedback,
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const LoginScreen = () => {
   const [isTyping, setIsTyping] = useState(false);
@@ -26,11 +37,20 @@ const LoginScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <KeyboardAvoidingView behavior="padding" style={styles.keyboardAvoidingView}>
-        <Image style={styles.backgroundLogo} source={require("../../assets/Background.png")} />
+      <KeyboardAvoidingView
+        behavior="padding"
+        style={styles.keyboardAvoidingView}
+      >
+        <Image
+          style={styles.backgroundLogo}
+          source={require("../../assets/Background.png")}
+        />
         <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
           <View style={styles.content}>
-            <Image source={require("../../assets/logo.png")} style={styles.logo} />
+            <Image
+              source={require("../../assets/logo.png")}
+              style={styles.logo}
+            />
             <TextInput
               style={styles.textInput}
               placeholder="Email or Phone"
@@ -51,8 +71,13 @@ const LoginScreen = () => {
               <Text style={styles.forgotPassword}>Forgot Password?</Text>
             </TouchableOpacity>
             <Image source={require("../../assets/OR.png")} style={styles.OR} />
-            <TouchableOpacity style={styles.createAccountButton} onPress={handleCreateAccount}>
-              <Text style={styles.createAccountText}>Create New Account</Text>
+            <TouchableOpacity
+              style={styles.createAccountButton}
+              onPress={handleCreateAccount}
+            >
+              <Text style={styles.createAccountText}>
+                Create New Flink Account
+              </Text>
             </TouchableOpacity>
           </View>
         </TouchableWithoutFeedback>
@@ -102,19 +127,19 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: "#FE6B35",
-    paddingVertical: 14,
-    borderRadius: 50,
+    paddingVertical: 10,
+    borderRadius: 15,
     alignItems: "center",
-    width: "70%",
+    width: 300,
     marginTop: 55,
-    shadowColor: "#000000",
+    shadowColor: "#0e23e1",
     shadowOffset: {
-      width: 0,
-      height: 9,
+    width: 0,
+    height: 8,
     },
-    shadowOpacity: 0.22,
-    shadowRadius: 9.22,
-    elevation: 12,
+    shadowOpacity:  0.21,
+    shadowRadius: 8.19,
+    elevation: 11
   },
   buttonText: {
     color: "#fff",
@@ -132,16 +157,24 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
   createAccountButton: {
-    borderWidth: 2,
+    borderWidth: 1,
     borderColor: "#384CFF",
-    paddingVertical: 10,
+    paddingVertical: 5,
     borderRadius: 50,
     marginTop: 30,
     alignItems: "center",
-    width: "70%",
+    width: "50%",
   },
   createAccountText: {
     color: "black",
+    fontSize: 12,
+    fontWeight: "bold",
+  },
+  searchByEmailButton: {
+    marginTop: 20,
+  },
+  searchByEmailText: {
+    color: "#384CFF",
     fontSize: 16,
     fontWeight: "bold",
   },
