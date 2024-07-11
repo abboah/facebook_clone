@@ -134,12 +134,12 @@ const styles = StyleSheet.create({
     marginTop: 55,
     shadowColor: "#0e23e1",
     shadowOffset: {
-    width: 0,
-    height: 8,
+      width: 0,
+      height: 8,
     },
-    shadowOpacity:  0.21,
+    shadowOpacity: 0.21,
     shadowRadius: 8.19,
-    elevation: 11
+    elevation: 11,
   },
   buttonText: {
     color: "#fff",

@@ -13,9 +13,10 @@ import {
 
 const SearchByEmailScreen = ({ navigation }) => {
   const [isFocused, setIsFocused] = useState(false);
-  
+
   const handleFindAccount = () => {
-    navigation.navigate("OTPVerification");  };
+    navigation.navigate("OTPVerification");
+  };
 
   const handleSearchByNumber = () => {
     navigation.navigate("ForgotPassword"); // Navigate back to ForgotPasswordScreen
@@ -25,7 +26,6 @@ const SearchByEmailScreen = ({ navigation }) => {
     <KeyboardAvoidingView style={styles.container} behavior="padding">
       <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
         <View style={styles.inner}>
-         
           <Text style={styles.title}>Enter your email address</Text>
           <TextInput
             placeholder="Email"
@@ -37,8 +37,13 @@ const SearchByEmailScreen = ({ navigation }) => {
           <TouchableOpacity style={styles.button} onPress={handleFindAccount}>
             <Text style={styles.buttonText}>Find Your Account</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={handleSearchByNumber} style={styles.searchByNumberButton}>
-            <Text style={styles.searchByNumberText}>Search by Number Instead</Text>
+          <TouchableOpacity
+            onPress={handleSearchByNumber}
+            style={styles.searchByNumberButton}
+          >
+            <Text style={styles.searchByNumberText}>
+              Search by Number Instead
+            </Text>
           </TouchableOpacity>
         </View>
       </TouchableWithoutFeedback>
@@ -52,7 +57,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   inner: {
-    position: 'absolute',
+    position: "absolute",
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
@@ -85,7 +90,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   textInputFocused: {
-    borderBottomColor: "#384CFF",  // Change border color when focused
+    borderBottomColor: "#384CFF", // Change border color when focused
     borderBottomWidth: 1,
   },
   button: {
@@ -97,12 +102,12 @@ const styles = StyleSheet.create({
     marginTop: 55,
     shadowColor: "#0e23e1",
     shadowOffset: {
-    width: 0,
-    height: 8,
+      width: 0,
+      height: 8,
     },
-    shadowOpacity:  0.21,
+    shadowOpacity: 0.21,
     shadowRadius: 8.19,
-    elevation: 11
+    elevation: 11,
   },
   buttonText: {
     color: "#fff",
@@ -110,7 +115,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   searchByNumberButton: {
-    position: 'absolute',
+    position: "absolute",
     top: 400,
   },
   searchByNumberText: {

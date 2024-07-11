@@ -6,12 +6,14 @@ import ForgotPasswordScreen from "./src/screens/ForgotPasswordScreen";
 import SearchByEmailScreen from "./src/screens/SearchByEmailScreen";
 import OTPVerificationScreen from "./src/screens/OTPVerificationScreen";
 import PasswordResetScreen from "./src/screens/PasswordResetScreen";
+import HomeScreen from "./src/screens/HomeScreen";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <HomeScreen />
+    /* <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen
           name="Login"
@@ -52,5 +54,6 @@ export default function App() {
         />
       </Stack.Navigator>
     </NavigationContainer>
+    */
   );
 }

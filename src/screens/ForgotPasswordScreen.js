@@ -9,13 +9,11 @@ import {
   View,
   Keyboard,
   KeyboardAvoidingView,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
 } from "react-native";
 
-
-
 const ForgotPasswordScreen = ({ navigation }) => {
-    const [isFocused, setIsFocused] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
 
   const handleFindAccount = () => {
     navigation.navigate("OTPVerification");
@@ -26,39 +24,41 @@ const ForgotPasswordScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-    <KeyboardAvoidingView style={styles.container} behavior="padding">
-      <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-        <View style={styles.inner}>
-          
-          <Text style={styles.title}>Enter your phone number</Text>
-          <TextInput
-            placeholder="Phone Number"
-            style={[styles.textInput, isFocused && styles.textInputFocused]}
-            keyboardType="phone-pad"
-            onFocus={() => setIsFocused(true)}
-            onBlur={() => setIsFocused(false)}
-          />
-          <TouchableOpacity style={styles.button} onPress={handleFindAccount}>
-            <Text style={styles.buttonText}>Find Your Account</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={handleSearchByEmail} style={styles.searchByEmailButton}>
-            <Text style={styles.searchByEmailText}>Search by Email Instead</Text>
-          </TouchableOpacity>
-        </View>
-      </TouchableWithoutFeedback>
-    </KeyboardAvoidingView>
+      <KeyboardAvoidingView style={styles.container} behavior="padding">
+        <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+          <View style={styles.inner}>
+            <Text style={styles.title}>Enter your phone number</Text>
+            <TextInput
+              placeholder="Phone Number"
+              style={[styles.textInput, isFocused && styles.textInputFocused]}
+              keyboardType="phone-pad"
+              onFocus={() => setIsFocused(true)}
+              onBlur={() => setIsFocused(false)}
+            />
+            <TouchableOpacity style={styles.button} onPress={handleFindAccount}>
+              <Text style={styles.buttonText}>Find Your Account</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={handleSearchByEmail}
+              style={styles.searchByEmailButton}
+            >
+              <Text style={styles.searchByEmailText}>
+                Search by Email Instead
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </TouchableWithoutFeedback>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
-}
-;
-
+};
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
   },
   inner: {
-    position: 'absolute',
+    position: "absolute",
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     right: 50,
     left: 50,
   },
-  
+
   title: {
     fontSize: 18,
     fontWeight: "bold",
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   textInputFocused: {
-    borderBottomColor: "#384CFF",  // Change border color when focused
+    borderBottomColor: "#384CFF", // Change border color when focused
     borderBottomWidth: 1,
   },
 
@@ -97,12 +97,12 @@ const styles = StyleSheet.create({
     shadowColor: "#384CFF",
     shadowColor: "#0e23e1",
     shadowOffset: {
-    width: 0,
-    height: 8,
+      width: 0,
+      height: 8,
     },
-    shadowOpacity:  0.21,
+    shadowOpacity: 0.21,
     shadowRadius: 8.19,
-    elevation: 11
+    elevation: 11,
   },
   buttonText: {
     color: "#fff",
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   searchByEmailButton: {
-    position: 'absolute',
+    position: "absolute",
     top: 400,
   },
   searchByEmailText: {
