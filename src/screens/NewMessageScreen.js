@@ -77,16 +77,20 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#ddd',
   },
+  
   lockIcon: {
     marginLeft: 10,
   },
   actionButtons: {
+    borderBottomWidth: 1,
+    borderColor: '#AAAAAA',
     padding: 10,
   },
   actionButton: {
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 10,
+    bordercolor: 'blue',
   },
   actionText: {
     marginLeft: 10,
