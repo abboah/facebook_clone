@@ -2,8 +2,11 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Alert, ScrollView, FlatList } from 'react-native';
 import { AntDesign, Feather, MaterialIcons, FontAwesome5 } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useNavigation } from "@react-navigation/native";
 
-const ChatScreen = ({ navigation }) => {
+
+const ChatScreen = () => {
+    const navigation = useNavigation();
   const messages = [
     // Sample data
     { id: '1', user: 'Felix Amofah', message: 'Hello, how are you?', time: '2:15 PM', read: false, UserProfile: require('../../assets/felix.png')},
@@ -20,6 +23,9 @@ const ChatScreen = ({ navigation }) => {
 
   const handleNotePress = () => {
     Alert.alert('Note pressed');
+  };
+  const handleSearchBar = () => {
+    navigation.navigate("New Message");
   };
 
   const handleUnreadPress = () => {
@@ -62,11 +68,9 @@ const ChatScreen = ({ navigation }) => {
         </View>
         {/* Second Section */}
         <View style={styles.searchBarContainer}>
-          <TextInput
-            style={styles.searchBar}
-            placeholder="Search"
-            placeholderTextColor="#555555"
-          />
+            <TouchableOpacity style={styles.searchBar} onPress={handleSearchBar}>
+                <Text style={styles.searchText}>Search</Text>
+          </TouchableOpacity>
           <TouchableOpacity style={styles.unreadButton} onPress={handleUnreadPress}>
             <Text style={styles.unreadButtonText}>Unread</Text>
           </TouchableOpacity>
@@ -154,6 +158,8 @@ const styles = StyleSheet.create({
     },
     searchBar: {
       flex: 6,
+      alignItems: 'flex-start',
+      justifyContent:'center',
       borderColor: '#ddd',
       borderWidth: 1,
       borderRadius: 10,
@@ -162,6 +168,9 @@ const styles = StyleSheet.create({
       backgroundColor: "#EEEEEE",
       width: 276,
       height: 34,
+        },
+        searchText:{
+         color:'#555555',
         },
     unreadButton: {
       flex: 2,

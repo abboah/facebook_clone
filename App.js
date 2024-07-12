@@ -8,12 +8,28 @@ import OTPVerificationScreen from "./src/screens/OTPVerificationScreen";
 import PasswordResetScreen from "./src/screens/PasswordResetScreen";
 import HomeScreen from "./src/screens/HomeScreen";
 import ChatScreen from "./src/screens/ChatScreen";
+import NewMessageScreen from "./src/screens/NewMessageScreen";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <ChatScreen/>
+   // <ChatScreen/>
+    <NavigationContainer>
+    <Stack.Navigator initialRouteName="Chat">
+    <Stack.Screen
+      name="Chat"
+      component={ChatScreen}
+      options={{ headerShown: false }}
+      />
+      <Stack.Screen
+      name="New Message"
+      component={NewMessageScreen}
+      />
+
+    </Stack.Navigator>
+    
+    </NavigationContainer>
    // <HomeScreen />
     /* <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
