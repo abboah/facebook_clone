@@ -9,6 +9,8 @@ import PasswordResetScreen from "./src/screens/PasswordResetScreen";
 import HomeScreen from "./src/screens/HomeScreen";
 import ChatScreen from "./src/screens/ChatScreen";
 import NewMessageScreen from "./src/screens/NewMessageScreen";
+import MessagerIntroScreen from "./src/screens/MessagerIntroScreen";
+
 
 const Stack = createNativeStackNavigator();
 
@@ -16,15 +18,24 @@ export default function App() {
   return (
    // <ChatScreen/>
     <NavigationContainer>
-    <Stack.Navigator initialRouteName="Chat">
+    <Stack.Navigator initialRouteName="ChatPage">
     <Stack.Screen
-      name="Chat"
+      name="ChatPage"
       component={ChatScreen}
       options={{ headerShown: false }}
       />
       <Stack.Screen
-      name="New Message"
+      name="NewMessagePage"
       component={NewMessageScreen}
+      options={{
+        title: "New Message",
+      }
+      }
+      />
+      <Stack.Screen
+      name="MessagerIntroPage"
+      component={MessagerIntroScreen}
+      options={{ headerShown: false }}
       />
 
     </Stack.Navigator>

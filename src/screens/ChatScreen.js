@@ -25,7 +25,7 @@ const ChatScreen = () => {
     Alert.alert('Note pressed');
   };
   const handleSearchBar = () => {
-    navigation.navigate("New Message");
+    navigation.navigate("NewMessagePage");
   };
 
   const handleUnreadPress = () => {
@@ -35,9 +35,12 @@ const ChatScreen = () => {
   const handleVideoCallPress = () => {
     Alert.alert('Create Video Call pressed');
   };
+  const handleMessageItemPress = (item) => {
+    navigation.navigate("MessagerIntroPage", { user: item.user, userProfile: item.UserProfile, time: item.time,message: item.message, });
+  };
 
   const renderMessageItem = ({ item }) => (
-    <View style={styles.messageItem}>
+    <TouchableOpacity style={styles.messageItem}onPress={() =>handleMessageItemPress(item)}>
       <Image source={item.UserProfile} style={styles.profilePic} />
       <View style={styles.messageText}>
         <Text style={styles.userName}>{item.user}</Text>
@@ -46,7 +49,7 @@ const ChatScreen = () => {
       <Text style={styles.time}>{item.time}</Text>
       <FontAwesome5 name="check-circle" size={24} color={item.read ? 'gray' : '#1C78FF' }/>
 
-    </View>
+    </TouchableOpacity>
   );
 
   return (
@@ -164,7 +167,7 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       borderRadius: 10,
       paddingHorizontal: 10,
-      fontFamily: 'Outfit_400Regular',
+      fontFamily: 'Outfit-Regular',
       backgroundColor: "#EEEEEE",
       width: 276,
       height: 34,
@@ -187,7 +190,7 @@ const styles = StyleSheet.create({
       height: 34,
     },
     unreadButtonText: {
-      fontFamily: 'Outfit_400Regular',
+      fontFamily: 'Outfit-Regular',
       color: '#555555',   
      },
     activeFriendsBar: {
@@ -217,7 +220,7 @@ const styles = StyleSheet.create({
     videoCallText: {
         fontSize: 10,
         lineHeight: 12,
-      fontFamily: 'Outfit_400Regular',
+      fontFamily: 'Outfit-Regular',
      // textAlignVertical: 'bottom',
     },
     activeFriend: {
@@ -234,7 +237,7 @@ const styles = StyleSheet.create({
         fontSize: 10,
         lineHeight: 12,
         fontWeight: '400',
-      fontFamily: 'Outfit_400Regular',
+      fontFamily: 'Outfit-Regular',
     },
     messagesContainer: {
     //  marginTop: 5,
@@ -253,14 +256,14 @@ const styles = StyleSheet.create({
       marginLeft: 10,
     },
     userName: {
-      fontFamily: 'Outfit_700Bold',
+      fontFamily: 'Outfit-Bold',
     },
     message: {
-      fontFamily: 'Outfit_400Regular',
+      fontFamily: 'Outfit-Regular',
       color: '#888',
     },
     time: {
-      fontFamily: 'Outfit_400Regular',
+      fontFamily: 'Outfit-Regular',
       color: '#888',
       marginRight: 10,
     },
