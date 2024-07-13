@@ -27,18 +27,18 @@ const MessagerIntroScreen = ({ route, navigation  }) => {
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={handleBackPress}>
-          <AntDesign name="left" size={24} color="blue" />
+          <AntDesign name="left" size={24} color="#FE6B35" />
         </TouchableOpacity>
         <Image source={userProfile} style={styles.profilePic} />
         <View style={styles.headerText}>
           <Text style={styles.userName}>{user}</Text>
           <Text style={styles.status}>Messenger</Text>
         </View>
-        <TouchableOpacity onPress={handleCallPress}>
-          <Feather name="phone" size={24} color="orange" />
+        <TouchableOpacity onPress={handleCallPress} style={styles.phoneIcon}>
+        <FontAwesome5 name="phone-alt" size={17} color="#FE6B35" />
         </TouchableOpacity>
         <TouchableOpacity onPress={handleVideoCallPress}>
-          <Feather name="video" size={24} color="orange" />
+        <FontAwesome5 name="video" size={21} color="#FE6B35" />
         </TouchableOpacity>
       </View>
 
@@ -85,6 +85,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: 10,
+  },
+  phoneIcon: {
+    marginRight: 20,
   },
   profilePic: {
     width: 40,
