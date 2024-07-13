@@ -10,14 +10,16 @@ import HomeScreen from "./src/screens/HomeScreen";
 import ChatScreen from "./src/screens/ChatScreen";
 import NewMessageScreen from "./src/screens/NewMessageScreen";
 import MessagerIntroScreen from "./src/screens/MessagerIntroScreen";
+import NotificationScreen from "./src/screens/NotificationScreen";
 
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
+    <NotificationScreen/>
    // <ChatScreen/>
-    <NavigationContainer>
+  /*  <NavigationContainer>
     <Stack.Navigator initialRouteName="ChatPage">
     <Stack.Screen
       name="ChatPage"
@@ -42,7 +44,7 @@ export default function App() {
     
     </NavigationContainer>
    // <HomeScreen />
-    /* <NavigationContainer>
+     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen
           name="Login"
