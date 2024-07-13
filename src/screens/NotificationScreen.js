@@ -78,7 +78,7 @@ const NotificationScreen = () => {
           </View>
         )}
       />
-      <Text style={styles.sectionHeader}>Earlier</Text>
+      <Text style={styles.sectionHeader1}>Earlier</Text>
       <FlatList
         data={notifications}
         keyExtractor={(item) => item.id}
@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     paddingVertical: 16,
+    backgroundColor: "#ccccff",
   },
   header: {
     fontSize: 24,
@@ -104,8 +105,17 @@ const styles = StyleSheet.create({
   },
   sectionHeader: {
     fontSize: 20,
+    fontWeight: 'bold',
     // fontFamily: 'Outfit-Bold',
     // marginTop: 16,
+    // marginBottom: 8,
+    marginHorizontal: 16,
+  },
+  sectionHeader1: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    // fontFamily: 'Outfit-Bold',
+    marginTop: -170,
     // marginBottom: 8,
     marginHorizontal: 16,
   },
@@ -118,7 +128,7 @@ const styles = StyleSheet.create({
     //backgroundColor: '#f0f0f0',
     // borderRadius: 8,
     marginTop: 0.5,
-    backgroundColor: "#ccccff",
+   // backgroundColor: "#ccccff",
   },
   profilePicture: {
     width: 50,
