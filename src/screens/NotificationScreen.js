@@ -68,6 +68,7 @@ const NotificationScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.header}>Notifications</Text>
+      <View style={styles.content}>
       <FlatList
         data={notifications}
         keyExtractor={(item) => item.id}
@@ -84,6 +85,7 @@ const NotificationScreen = () => {
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <NotificationItem item={item} />}
       />
+      </View>
     </SafeAreaView>
   );
 };
@@ -92,9 +94,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    paddingVertical: 16,
-    backgroundColor: "#ccccff",
+   // paddingTop: 10, 
   },
+       
+  content: {
+  flex: 1,
+  marginTop: 10,
+  backgroundColor: "#ccccff",
+  },
+
   header: {
     fontSize: 24,
     // fontFamily: 'Outfit-Bold',
@@ -127,7 +135,7 @@ const styles = StyleSheet.create({
     padding: 10,
     //backgroundColor: '#f0f0f0',
     // borderRadius: 8,
-    marginTop: 0.5,
+    //marginTop: 1,
    // backgroundColor: "#ccccff",
   },
   profilePicture: {
