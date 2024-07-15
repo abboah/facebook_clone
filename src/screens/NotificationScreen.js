@@ -7,6 +7,7 @@ import {
   Image,
   TouchableOpacity,
   Alert,
+  ScrollView,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -39,6 +40,38 @@ const notifications = [
     time: "2 hours ago",
     message: "has a new story up. What's your reaction?",
   },
+  {
+    id: "5",
+    name: "Darrell Trivedi",
+    profilePicture: "https://via.placeholder.com/50",
+    time: "2 hours ago",
+    message: "has a new story up. What's your reaction?",
+  },
+  {
+    id: "6",
+    name: "Darrell Trivedi",
+    profilePicture: "https://via.placeholder.com/50",
+    time: "2 hours ago",
+    message: "has a new story up. What's your reaction?",
+  },
+  {
+    id: "7",
+    name: "Darrell Trivedi",
+    profilePicture: "https://via.placeholder.com/50",
+    time: "2 hours ago",
+    message: "has a new story up. What's your reaction?",
+  },
+  {
+    id: "8",
+    name: "Darrell Trivedi",
+    profilePicture: "https://via.placeholder.com/50",
+    time: "2 hours ago",
+    message: "has a new story up. What's your reaction?",
+  },
+ 
+ 
+  
+  
   // Add more notifications as needed...
 ];
 
@@ -68,24 +101,28 @@ const NotificationScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.header}>Notifications</Text>
-      <View style={styles.content}>
-      <FlatList
-        data={notifications}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <NotificationItem item={item} />}
-        ListHeaderComponent={() => (
-          <View>
-            <Text style={styles.sectionHeader}>New</Text>
+      <ScrollView style={styles.messageContainer}>        
+        <View style={styles.content1}>
+          <FlatList
+            data={notifications}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => <NotificationItem item={item} />}
+            ListHeaderComponent={() => (
+              <View>
+                <Text style={styles.sectionHeader}>New</Text>
+              </View>
+            )}
+          />
           </View>
-        )}
-      />
-      <Text style={styles.sectionHeader1}>Earlier</Text>
-      <FlatList
-        data={notifications}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <NotificationItem item={item} />}
-      />
-      </View>
+          <View style={styles.content2}>
+          <Text style={styles.sectionHeader1}>Earlier</Text>
+          <FlatList
+            data={notifications}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => <NotificationItem item={item} />}
+          />
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -94,18 +131,26 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-   // paddingTop: 10, 
   },
-       
-  content: {
-  flex: 1,
-  marginTop: 10,
-  backgroundColor: "#ccccff",
+
+  content1: {
+    flex: 1,
+    marginTop: 10,
+    marginBottom: 1,
+    backgroundColor: "#ccccff",   
+
+  },
+  content2: {
+    flex: 1,
+    backgroundColor: "#ccccff",   
+
+  },
+  messageContainer: {
+    flex: 1,
   },
 
   header: {
     fontSize: 24,
-    // fontFamily: 'Outfit-Bold',
     marginTop: 3,
     marginLeft: 16,
     marginBottom: 10,
@@ -113,18 +158,13 @@ const styles = StyleSheet.create({
   },
   sectionHeader: {
     fontSize: 20,
-    fontWeight: 'bold',
-    // fontFamily: 'Outfit-Bold',
-    // marginTop: 16,
-    // marginBottom: 8,
+    fontWeight: "bold",
+    
     marginHorizontal: 16,
   },
   sectionHeader1: {
     fontSize: 20,
-    fontWeight: 'bold',
-    // fontFamily: 'Outfit-Bold',
-    marginTop: -170,
-    // marginBottom: 8,
+    fontWeight: "bold",
     marginHorizontal: 16,
   },
   notificationItem: {
@@ -133,10 +173,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 70,
     padding: 10,
-    //backgroundColor: '#f0f0f0',
-    // borderRadius: 8,
-    //marginTop: 1,
-   // backgroundColor: "#ccccff",
+    //marginVertical: 0.5,
   },
   profilePicture: {
     width: 50,
@@ -149,17 +186,14 @@ const styles = StyleSheet.create({
   },
   notificationName: {
     fontWeight: "bold",
-    //fontFamily: 'Outfit-Bold',
     fontSize: 12,
   },
   notificationMessage: {
     fontWeight: "400",
 
-    // fontFamily: 'Outfit-Regular',
     fontSize: 12,
   },
   notificationTime: {
-    // fontFamily: 'Outfit-Regular',
     fontSize: 14,
     color: "#777",
   },
